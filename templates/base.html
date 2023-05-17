@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <LINK rel="SHORTCUT ICON" href="{% static 'images/Icono.ico' %}" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>BOSOFT</title>
+
+		<link rel="stylesheet" href="{% static 'style.css' %}" />
+
+		<style type="text/css">
+/* 			.wrap .home_center_content .home_center_content #tab .center_text .big_title {
+			}
+ */			.wrap .home_center_content .home_center_content #tab .center_text p {
+				font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+			}
+        </style>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>	
+        <script type="text/javascript">
+        
+        function hideall() {
+            $("#tab").hide();
+            $("#tab1").hide();
+            $("#tab2").hide();
+            $("#tab3").hide();
+            $("#tab4").hide();			
+        }
+        $(document).ready(function(){
+        
+        $("#icon1").mouseover(function () {
+        hideall();
+        $("#tab1").css("display","block");     
+        });
+        
+        $("#icon2").mouseover(function () {
+        hideall();
+        $("#tab2").css("display","block");     
+        });
+        
+        $("#icon3").mouseover(function () {
+        hideall();
+        $("#tab3").css("display","block");     
+        });  
+        
+        hideall();
+        $("#tab").show();       
+        
+          });
+        </script>
+    </head>
+    
+        <div class="wrap">
+            
+            {% include 'navbar.html' %}
+
+            {% block content %}
+                
+            {% endblock %}
+        
+        </div><!--End of wrap-->
+
+    <div class="footer">
+        <div class="footer_content">
+            <div class="footer_tab1">
+                <h2>En contacto</h2>
+                <span class="email">Email: <a href="mailto:info@bosoft.com.ar">soporte@bosoft.com.ar</a></span>
+            
+                <div class="footer_info">
+                    <span class="orange">Tel&eacute;fonos:</span>
+                    <p class="info">
+                        261-4161434
+                    </p> 
+  
+                </div> 
+                <div class="footer_copyrights">
+                    <img src="{% static 'images/footer_logo.gif' %}" alt="" title="" /><br />
+                    &copy; 1986 Todos los derechos Reservados
+                </div>  
+            </div> <!--End of footer_tab1-->
+        
+            <div class="footer_tab2">
+            
+             </div> <!--End of footer_tab2--> 
+            <div class="clear"></div>
+        </div> <!--End of footer_content-->
+    </div><!--End of footer-->
+
+</html>

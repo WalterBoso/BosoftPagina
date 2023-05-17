@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <LINK REL="SHORTCUT ICON" HREF="{% static 'images/Icono.ico' %}" />
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+        <title>BOSOFT</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    </head>
+    
+	<body class="details">
+        <div class="wrap">
+            <div class="header">
+                <div class="logo"><a href="index.html"><img src="images/logo.png" alt="" title="" border="0" /></a>
+                </div>
+                <div id="menu">
+                    <ul>                                                                       
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="conocenos.html">Conocenos</a>
+                        </li>
+                        <li>
+                            <a href="servicios.html">Servicios</a>
+                        </li>
+                    <li class="selected">
+                        <a href="contactoPHP.php">Contacto</a>
+                    </li>
+                    </ul>
+                </div>
+            </div> <!--End of header-->
+        </div>
+        <div class="wrap">
+        	<!-- <div class="tabla_2celdas">
+            	<div class="columna1"> -->
+                    <h1>Cont&aacute;ctenos</h1>    
+                    <form id="contacts-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <fieldset>
+                            <div class="field text">
+                              <label>* Nombre: </label>
+                              <input name="nombre" type="text"></div>
+                            <div class="field text">
+                              <label> E-mail: </label>
+                              <input name="mail" type="text"></div>
+                            <div class="field text">
+                              <label>Asunto: </label>
+                              <input name="asunto" type="text"></div>
+                            <div class="field">
+                              <label>* Mensaje: </label>
+                              <textarea name="mensaje"></textarea></div>
+                            <div><input type="submit" name="enviar" value="Enviar"/></div>
+                        </fieldset>
+                    </form>
+                    <?php
+						if (isset($_POST['enviar'])) {
+			
+							$nombre = $_POST['nombre'];
+							$mail = $_POST['mail'];
+							$asunto = $_POST['asunto'];
+			
+							if ($_POST['nombre'] != NULL && $_POST['mensaje'] != NULL) {
+			
+								$header = 'From: ' . $mail . " \r\n";
+								$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
+								$header .= "Mime-Version: 1.0 \r\n";
+								$header .= "Content-Type: text/plain";
+			
+								$mensaje = "Este mensaje fue enviado por " . $nombre . ". \r\n";
+								if ($_POST['asunto'] != NULL){
+									$mensaje .= "Asunto:  " . $asunto . ". \r\n";
+								}
+								if ($_POST['mail'] != NULL){
+									$mensaje .= "E-mail de contacto: " . $mail . ". \r\n";
+								}
+								$mensaje .= "Mensaje: " . $_POST['mensaje'] . ". \r\n";
+								$mensaje .= "Enviado el " . date('d/m/Y', time());
+			
+								$para = 'walter_boso@bosoft.com.ar';
+								$asunto = 'Contacto desde bosoft.com.ar';
+			
+								mail($para, $asunto, utf8_decode($mensaje), $header);
+			
+								echo 'Mensaje enviado correctamente.';
+							} else {
+								echo 'Mensaje no enviado. Debe rellenar todos los campos en la informacion de contacto (*).';
+							}
+						}
+					?>
+               	<!-- </div>
+        	</div> -->
+        </div>
+        <div class="footer">
+        	<div class="footer_content">
+            	<div class="footer_tab1">
+                	<h2>En contacto</h2>
+                	<span class="email">Email: <a href="mailto:info@bosoft.com.ar">soporte@bosoft.com.ar</a></span>
+                
+                	<div class="footer_info">
+                    	<span class="orange">Tel&eacute;fonos:</span>
+                    	<p class="info">
+                    		261-4161434
+                        </p> 
+      
+                	</div> 
+                	<div class="footer_copyrights">
+                		<img src="images/footer_logo.gif" alt="" title="" /><br />
+                		&copy; 1986 Todos los derechos Reservados
+                	</div>  
+            	</div> <!--End of footer_tab1-->
+                <div class="footer_tab2">
+                
+                </div> <!--End of footer_tab2--> 
+               <div class="clear"></div>
+        	</div> <!--End of footer_content-->
+    	</div><!--End of footer-->
+    </body>
+</html>

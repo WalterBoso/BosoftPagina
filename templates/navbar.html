@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="header">
+    <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="" title="" border="0" /></a></div>                
+    <div id="menu">
+        <ul>                                                                       
+            <li class="selected">
+                <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="selected">
+                <a href="{% url 'conocenos' %}">Conocenos</a>
+            </li>
+            <li class="selected">
+                <a href="{% url 'servicios' %}">Servicios</a>
+            </li>
+            <li class="selected">
+                <a href="{% url 'contacto' %}">Contacto</a>
+            </li>
+        </ul>
+    </div>
+</div> <!--End of header-->

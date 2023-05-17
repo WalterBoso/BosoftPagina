@@ -1,0 +1,24 @@
+{% load static %}
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mail</title>
+    </head>
+
+    <body>
+        <h1>Envio de Mail a {{ nombre }} </h1>
+
+        <h3> {{ mensaje }}</h3>
+        <p>Correo enviado a {{ mail }}</p>
+
+        <p align="left">
+            <img src="{% static 'images/logo_bosoft_nuevo.jpg' %}" alt="" title="" width="250" height="50" /><br />
+        </p>
+
+    </body>
+
+</html>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body class="details">
+
+        <div class="wrap"></div>
+            <h1>Cont&aacute;ctenos</h1>    
+                
+            <form id="contacts-form" action="#" method="POST">
+                {% csrf_token %}
+                <fieldset>
+                    <div class="field text">
+                    <label>* Nombre: </label>
+                    <input name="nombre" type="text"></div>
+                    <div class="field text">
+                    <label> E-mail: </label>
+                    <input name="mail" type="text"></div>
+                    <div class="field text">
+                    <label>Asunto: </label>
+                    <input name="asunto" type="text"></div>
+                    <div class="field">
+                    <label>* Mensaje: </label>
+                    <textarea name="mensaje"></textarea></div>
+                    <div><input type="submit" name="enviar" value="Enviar"/></div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+{% endblock %}
