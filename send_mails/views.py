@@ -6,8 +6,9 @@ from email.mime.base import MIMEBase
 from email import encoders
 from django.conf import settings
 from django.template.loader import get_template
+from django.contrib import messages
 
-def send_mail(nombre, mail, asunto, mensaje):
+def send_mail(request, nombre, mail, asunto, mensaje):
 
     context = {'nombre': nombre, 
                'mail': mail,
@@ -31,7 +32,8 @@ def send_mail(nombre, mail, asunto, mensaje):
     smtp.login(remitente, settings.EMAIL_HOST_PASSWORD)
     try:
         smtp.sendmail(remitente, destinatario, email.as_string())
+        messages.success(request, 'Correo enviado...')
     except IOError:
-        print("Debe completar los campos")
+        messages.error(request, 'Error al enviar el correo...')
 
     smtp.quit()

@@ -17,7 +17,9 @@ def contacto(request):
         asunto = request.POST.get('asunto')
         mensaje = request.POST.get('mensaje')
 
-        send_mail(nombre, mail, asunto, mensaje)
+        send_mail(request, nombre, mail, asunto, mensaje)
 
     return render(request, 'contacto.html', {})
 
+def enDesarrollo(request):
+    return render(request, 'enDesarrollo.html', {})

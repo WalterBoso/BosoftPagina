@@ -370,14 +370,14 @@ color:#000000;
 
 #contacts-form {
 	border:none;
-	width:200;
+	width:150;
 }
 #contacts-form .field {
 	width:120;
-	overflow:hidden
+	overflow:hidden;
 }
 #contacts-form .field.text {
-	height:25px
+	height:25px;
 }
 #contacts-form label {
 	text-align:right;
@@ -398,7 +398,7 @@ color:#000000;
 }
 #contacts-form input {
 	width:299px;
-	padding:3px 3px
+	padding:3px 3px;
 }
 #contacts-form textarea {
 	width:300px;
@@ -408,7 +408,7 @@ color:#000000;
 	margin-bottom:17px
 }
 #contacts-form a {
-	margin-left:6px
+	margin-left:6px;
 }
 
 #contacts-form input[type=submit]{

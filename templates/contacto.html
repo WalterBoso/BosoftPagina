@@ -4,6 +4,14 @@
     <body class="details">
 
         <div class="wrap"></div>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <h1>Cont&aacute;ctenos</h1>    
                 
             <form id="contacts-form" action="#" method="POST">
